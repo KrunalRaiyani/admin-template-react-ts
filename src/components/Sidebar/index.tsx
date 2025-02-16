@@ -3,12 +3,11 @@ import { NavLink, useLocation } from 'react-router-dom';
 import SidebarLinkGroup from './SidebarLinkGroup';
 import Logo from '../../images/logo/logo.svg';
 import DashboardIcon from '../../images/icon/DashboardIcon';
-import Calander from '../../images/icon/Calander';
 import FormIcon from '../../images/icon/FormIcon';
-import ChartIcon from '../../images/icon/ChartIcon';
-import ElementIcon from '../../images/icon/ElementIcon';
 import DropDownArr from '../../images/icon/DropDownArr';
 import { SiBigcartel } from 'react-icons/si';
+import { FaUsers } from 'react-icons/fa';
+import { MdOutlineSettings } from 'react-icons/md';
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -28,6 +27,18 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       icon: <SiBigcartel />,
       isMore: false,
       path: '/products',
+    },
+    {
+      name: 'Users',
+      icon: <FaUsers />,
+      isMore: false,
+      path: '/users',
+    },
+    {
+      name: 'Setting',
+      icon: <MdOutlineSettings />,
+      isMore: false,
+      path: '/setting',
     },
     {
       name: 'Forms',

@@ -8,6 +8,9 @@ import ECommerce from './pages/Dashboard/ECommerce';
 import Products from './pages/products/Products';
 import { ToastContainer } from 'react-toastify';
 import AddProduct from './pages/products/AddProduct';
+import Users from './pages/users/Users';
+import UserDetail from './pages/users/UserDetail';
+import ProfilePage from './pages/setting/ProfilePage';
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const { pathname } = useLocation();
@@ -68,6 +71,36 @@ function App() {
               <>
                 <PageTitle title="Add Product | Admin" />
                 <AddProduct />
+              </>
+            }
+          />
+
+          <Route
+            path="/users"
+            element={
+              <>
+                <PageTitle title="Users | Admin" />
+                <Users />
+              </>
+            }
+          />
+
+          <Route
+            path="/users/view/:id"
+            element={
+              <>
+                <PageTitle title="User Details | Admin" />
+                <UserDetail />
+              </>
+            }
+          />
+
+          <Route
+            path="/setting"
+            element={
+              <>
+                <PageTitle title="Setting | Admin" />
+                <ProfilePage />
               </>
             }
           />

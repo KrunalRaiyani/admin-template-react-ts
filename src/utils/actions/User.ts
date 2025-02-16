@@ -1,20 +1,12 @@
 import { MakeProtectedApiCall } from '../api';
 
-export const GET_USER_DATA = async (
+export const GET_ALL_USER = async (
   page: number,
   limit: number,
-  str: string,
+  search: string,
 ) => {
   try {
-    const url = `/admin/user/getAllUser?page=${page}&limit=${limit}&str=${str}`;
-    const res = await MakeProtectedApiCall(url, 'GET');
-    return res;
-  } catch (error: any) {}
-};
-
-export const GET_ALL_USER = async () => {
-  try {
-    const url = `/admin/user/getAllUser`;
+    const url = `/admin/user/getAll?page=${page}&limit=${limit}&search=${search}`;
     const res = await MakeProtectedApiCall(url, 'GET');
     return res;
   } catch (error: any) {}
@@ -22,7 +14,7 @@ export const GET_ALL_USER = async () => {
 
 export const GET_USER_DATA_BYID = async (id: any) => {
   try {
-    const url = `/admin/user/getUserById/${id}`;
+    const url = `/admin/user/getById/${id}`;
     const res = await MakeProtectedApiCall(url, 'GET');
     return res;
   } catch (error: any) {}
